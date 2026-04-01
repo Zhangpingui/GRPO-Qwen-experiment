@@ -52,11 +52,12 @@ grpo_project/
 ## 运行指南
 
 ### 前置依赖
-在运行本项目前，请确保你已经安装了以下关键库（建议在虚拟环境中运行）：
+在运行本项目前，请确保你已经安装了相关依赖（推荐使用 Python 3.11 在虚拟环境中运行）：
+
 ```bash
-pip install torch transformers datasets trl wandb
+pip install -r requirements.txt
 ```
-*(如果需要使用 vLLM 加速，请确保安装对应的 `vllm` 版本，并在 `config.py` 中开启 `use_vllm=True`)*
+*(如果需要使用 vLLM 加速，请确保安装对应的 `vllm` 版本，并在 `config.py` 中开启 `use_vllm=True`。注意：如果遇到 `vllm_device` 参数报错，可以尝试在 `config.py` 中将其注释或移除)*
 
 ### 步骤 1：配置 Wandb (可选)
 如果需要使用 Wandb 跟踪你的训练损失和奖励变化，请在当前项目根目录下基于 `.env.example` 创建一个 `.env` 文件，或者直接在终端设置环境变量：
